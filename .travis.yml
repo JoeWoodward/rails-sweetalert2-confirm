@@ -5,15 +5,14 @@ env:
   - RAILS_VERSION=4.0.8
   - RAILS_VERSION=4.1.4
   - RAILS_VERSION=4.1.4 USE_TURBOLINKS=true
-  - RAILS_VERSION=4.2.4 
+  - RAILS_VERSION=4.2.4
   - RAILS_VERSION=4.2.4 USE_TURBOLINKS=true
   - RAILS_VERSION=master
- 
+
 rvm:
  - 1.9.3
  - 2.2.1
  - jruby-19mode
-
 
 matrix:
   allow_failures:

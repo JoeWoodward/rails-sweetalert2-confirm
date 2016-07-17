@@ -1,18 +1,14 @@
-sweet-alert-rails-confirm
+sweetalert2-rails-confirm
 =========================
 
-[![Build Status](https://travis-ci.org/mois3x/sweet-alert-rails-confirm.svg?branch=master)](http://travis-ci.org/mois3x/sweet-alert-rails-confirm)
+A Rails confirm replacement with SweetAlert2
 
-
-A Rails confirm replacement with SweetAlert
-
-depends on https://github.com/t4t5/sweetalert
+depends on `https://github.com/limonte/sweetalert2`
 
 So you need to Install:
-    gem 'sweet-alert'
-
-Or the latest with:
-    gem 'rails-assets-sweetalert' # Using https://rails-assets.org/ 
+  `gem 'sweetalert2'`
+  or
+  `gem 'rails-assets-sweetalert2', source 'https://rails-assets.org'`
 
 ## Requirements
 Rails >= 3.1
@@ -21,21 +17,21 @@ Rails >= 3.1
 
 Add it to your Gemfile:
 ```ruby
-gem 'sweet-alert'
-gem 'sweet-alert-confirm'
+gem 'rails-assets-sweetalert2', source 'https://rails-assets.org'
+gem 'sweetalert2-confirm'
 ```
 
 Add the following to application.js:
 
 ```javascript
-//= require sweet-alert
-//= require sweet-alert-confirm
+//= require sweetalert2
+//= require sweetalert2-rails-confirm
 ```
 Add the following to application.css:
 
 ```css
 /*
- *= require sweet-alert
+ *= require sweetalert2
  */
 ```
 
@@ -44,14 +40,17 @@ Add the following to application.css:
 
 You can pass options in `data:`
 ```Ruby
- data: {
-  confirm: 'Are you ready?'
-  :'confirm-button-text' => 'Im ready',
-  :'cancel-button-text' => 'No way',
-  :'confirm-button-color' => '#66CD00',
-  :'sweet-alert-type' => 'info',
+data: {
+  confirm: 'Are you ready?',
+  confirm_button_text: 'Im ready',
+  cancel_button_text: 'No way',
+  confirm_button_color: 'red',
+  cancel_button_color: '#fff',
+  confirm_button_class: 'btn btn_danger',
+  cancel_button_class: 'btn btn_danger',
+  sweet_alert_type: 'info',
   text: 'This is a subtitle',
-  :'image-url' => '/pic.png'
+  image_url: '/pic.png'
 }
 ```
 
@@ -66,19 +65,22 @@ var sweetAlertConfirmConfig = {
   showCancelButton: true,
   confirmButtonColor: '#DD6B55',
   confirmButtonText: 'Ok'
+  confirmButtonClass: 'btn btn-danger'
 };
 ```
 
 ### Before Callback
 
-A callback that will be runned before alert is shown. Returning `false` will display the alert and `true` will _not_ display it.
+You can skip the alert by passing data-swal-alert-enabled (conditional function [return true or false])
+- `true` (display alert)
+- `false`(_not_ display alert)
 
-`data-saBeforeFunction='myFunction'`
+`data-swal-alert-enabled='$('#confirmations_enabled').val()'`
 
 ## Contribute
 
 Fork the repo & pull request you fix/feature
 
-append `RAILS_VERSION=4.1.2` or whichever you target before your `bundle` command ex: `RAILS_VERSION=4.1.2 bundle install`
+append `RAILS_VERSION=4.2` or whichever you target before your `bundle` command ex: `RAILS_VERSION=4.2 bundle install`
 
 please add/modify test examples on fix or features

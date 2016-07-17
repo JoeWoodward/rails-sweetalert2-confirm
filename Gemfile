@@ -35,7 +35,7 @@ group :development, :test do
   gem "jquery-rails"
   gem "test-unit"
   gem 'sass-rails'
-  gem "sweet-alert"
+  gem "rails-assets-sweetalert2", source: 'https://rails-assets.org'
   gem "capybara"
   gem "poltergeist"
   gem "rake"
