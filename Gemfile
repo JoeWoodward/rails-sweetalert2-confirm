@@ -28,14 +28,13 @@ gem "rails", rails
 gem "turbolinks"
 
 source 'https://rails-assets.org' do
-    gem 'rails-assets-sweetalert'
+  gem 'rails-assets-sweetalert2'
 end
 
 group :development, :test do
   gem "jquery-rails"
   gem "test-unit"
   gem 'sass-rails'
-  gem "rails-assets-sweetalert2", source: 'https://rails-assets.org'
   gem "capybara"
   gem "poltergeist"
   gem "rake"

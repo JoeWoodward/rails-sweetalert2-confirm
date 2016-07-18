@@ -5,7 +5,6 @@ describe 'basic confirms', js: true, type: :feature do
     if ENV['USE_TURBOLINKS']
       visit root_path
       page.execute_script('Turbolinks.visit("/confirms_page");') 
-      #find_link('Index').trigger('click')
     else
       visit root_path
       click_link 'Index'
@@ -69,7 +68,6 @@ describe 'basic confirms', js: true, type: :feature do
 
 
     it 'ajax change content in the page after accept confirm' do
-      #click_on '.confirm'
       sleep 3
       expect(page).to_not have_content('You murdered a silly cow with ajax')
       sleep 3
@@ -82,6 +80,7 @@ describe 'basic confirms', js: true, type: :feature do
     before do
       visit confirms_page_path
     end
+
     it 'when click on a link with a confirm and have custom options' do
       find_link("Custom confirm").trigger('click')
       sleep 1
@@ -90,13 +89,11 @@ describe 'basic confirms', js: true, type: :feature do
       expect(page).to have_css('.sa-info', visible: true)
       expect(page).to have_css('h2', text: 'Are you ready?')
       expect(page).to have_css('p', text: 'This is a subtitle')
-
     end
   end
 
   describe 'Submit confirm' do
     before do
-      #visit confirms_page_path
       find("#submit-delete").trigger('click')
     end
     it_behaves_like 'Confirm shows correctly', true
@@ -104,13 +101,9 @@ describe 'basic confirms', js: true, type: :feature do
 
   describe 'button_tag links' do
     before do
-      #visit confirms_page_path
       find_button("Button_tag confirm").trigger('click')
     end
 
     it_behaves_like 'Confirm shows correctly', true
   end
-
-
 end
-

@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Engine	lib/sweetalert2-rails-confirm/rails/engine.rb	/^    class Engine < ::Rails::Engine$/;"	c	class:SweetAlert2RailsConfirm.Rails
+Rails	lib/sweetalert2-rails-confirm/rails/engine.rb	/^  module Rails$/;"	m	class:SweetAlert2RailsConfirm
+Railtie	lib/sweetalert2-rails-confirm/railtie.rb	/^  class Railtie < Rails::Railtie$/;"	c	class:SweetAlert2RailsConfirm
+SweetAlert2RailsConfirm	lib/sweetalert2-rails-confirm.rb	/^module SweetAlert2RailsConfirm$/;"	m
+SweetAlert2RailsConfirm	lib/sweetalert2-rails-confirm/rails/engine.rb	/^module SweetAlert2RailsConfirm$/;"	m
+SweetAlert2RailsConfirm	lib/sweetalert2-rails-confirm/railtie.rb	/^module SweetAlert2RailsConfirm$/;"	m
+SweetAlert2RailsConfirm	lib/sweetalert2-rails-confirm/version.rb	/^module SweetAlert2RailsConfirm$/;"	m
+SweetAlert2RailsConfirm	lib/sweetalert2-rails-confirm/view_helpers.rb	/^module SweetAlert2RailsConfirm$/;"	m
+ViewHelpers	lib/sweetalert2-rails-confirm/view_helpers.rb	/^  module ViewHelpers$/;"	m	class:SweetAlert2RailsConfirm
+button_tag	lib/sweetalert2-rails-confirm/view_helpers.rb	/^    def button_tag(*args, &block)$/;"	f	class:SweetAlert2RailsConfirm.ViewHelpers
+link_to	lib/sweetalert2-rails-confirm/view_helpers.rb	/^    def link_to(*args, &block)$/;"	f	class:SweetAlert2RailsConfirm.ViewHelpers
+options_has_confirm?	lib/sweetalert2-rails-confirm/view_helpers.rb	/^    def options_has_confirm?(options)$/;"	f	class:SweetAlert2RailsConfirm.ViewHelpers
+replace_confirm_with_swal	lib/sweetalert2-rails-confirm/view_helpers.rb	/^    def replace_confirm_with_swal(options)$/;"	f	class:SweetAlert2RailsConfirm.ViewHelpers
+submit_tag	lib/sweetalert2-rails-confirm/view_helpers.rb	/^    def submit_tag(value = 'Save changes', options = {})$/;"	f	class:SweetAlert2RailsConfirm.ViewHelpers

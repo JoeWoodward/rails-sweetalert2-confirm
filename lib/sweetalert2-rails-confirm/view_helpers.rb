@@ -21,7 +21,9 @@ module SweetAlert2RailsConfirm
 
     def replace_confirm_with_swal(options)
       if options_has_confirm?(options)
-        options['data-swal-confirm'] =
+        options[:data] ||= {}
+        options[:data][:swal] ||= {}
+        options[:data][:swal][:title] =
           options.delete(:confirm) || options[:data].delete(:confirm)
       end
       options
