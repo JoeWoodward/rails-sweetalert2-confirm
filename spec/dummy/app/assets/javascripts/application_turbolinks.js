@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require sweetalert2
-//= require sweetalert2-rails-confirm
-// require_tree .
+//= require rails_sweetalert2_confirm
