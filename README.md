@@ -1,4 +1,4 @@
-Rails SweetAlert2 Confirmations
+Rails SweetAlert2 Confirmations <img src="https://travis-ci.org/JoeWoodward/rails-sweetalert2-confirm.svg" alt="build:">
 ---
 
 An awesome [SweetAlert2](https://github.com/limonte/sweetalert2)
