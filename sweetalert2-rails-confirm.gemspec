@@ -18,6 +18,14 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "capybara", "~> 2.1"
   s.add_development_dependency "pry"
+  s.add_development_dependency "jquery-rails"
+  s.add_development_dependency "test-unit"
+  s.add_development_dependency "sass-rails"
+  s.add_development_dependency "capybara"
+  s.add_development_dependency "poltergeist"
+  s.add_development_dependency "rake"
+  s.add_development_dependency "turbolinks"
+  s.add_development_dependency "rails-assets-sweetalert2"
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ['lib']
 end
