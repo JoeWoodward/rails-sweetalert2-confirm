@@ -13,18 +13,16 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
-rails_version = ENV["RAILS_VERSION"] || "default"
+rails_version = case (ENV["RAILS_VERSION"] || "default")
+                when "master"
+                  { github: "rails/rails" }
+                when "default"
+                  ">= 4.2.0"
+                else
+                  "~> #{ENV["RAILS_VERSION"]}"
+                end
 
-rails = case rails_version
-        when "master"
-          {github: "rails/rails"}
-        when "default"
-          ">= 4.1.0"
-        else
-          "~> #{rails_version}"
-        end
-
-gem "rails", rails
+gem "rails", rails_version
 gem "turbolinks"
 
 source 'https://rails-assets.org' do
