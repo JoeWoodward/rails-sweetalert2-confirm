@@ -15,17 +15,15 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.add_development_dependency "rails", ">=4"
-  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "rspec-rails", '~> 3.5'
   s.add_development_dependency "capybara", "~> 2.1"
-  s.add_development_dependency "pry"
-  s.add_development_dependency "jquery-rails"
-  s.add_development_dependency "test-unit"
-  s.add_development_dependency "sass-rails"
-  s.add_development_dependency "capybara"
-  s.add_development_dependency "poltergeist"
-  s.add_development_dependency "rake"
-  s.add_development_dependency "turbolinks"
-  s.add_development_dependency "rails-assets-sweetalert2"
+  s.add_development_dependency "pry", '~> 0.10'
+  s.add_development_dependency "jquery-rails", '~> 4.1'
+  s.add_development_dependency "test-unit", '~> 3.2'
+  s.add_development_dependency "sass-rails", '~> 5.0'
+  s.add_development_dependency "poltergeist", '~> 1.10'
+  s.add_development_dependency "rake", '~> 11.2'
+  s.add_development_dependency "turbolinks", '~> 5.0'
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ['lib']
 end
