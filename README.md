@@ -22,7 +22,7 @@ gem 'rails-assets-sweetalert2', source 'https://rails-assets.org'
 // app/assets/javascripts/application.js
 
 //= require sweetalert2
-//= require sweetalert2-rails-confirm
+//= require rails-sweetalert2-confirm
 ```
 
 ```css
