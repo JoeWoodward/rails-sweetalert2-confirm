@@ -1,7 +1,8 @@
 module RailsSweetAlert2Confirm
   SWAL_OPTIONS_MAPPINGS = {
     confirm: :title,
-    remote:  :remote
+    remote:  :remote,
+    method: :method
   }
 
   module ViewHelpers
@@ -26,7 +27,8 @@ module RailsSweetAlert2Confirm
 
     def merge_options_into_swal(options)
       options = merge_confirm_into_swal(options)
-      merge_remote_into_swal(options)
+      options = merge_remote_into_swal(options)
+      merge_method_into_swal(options)
     end
 
     %w(confirm remote method).each do |option|
@@ -36,18 +38,15 @@ module RailsSweetAlert2Confirm
           options[:data][:swal] ||= {}
           option = option.to_sym
           options[:data][:swal][SWAL_OPTIONS_MAPPINGS[option]] =
-            send("retrieve_#{option}_from", options)
+            if option == :method
+              options[option] ||
+                options[:data][option]
+            else
+              options.delete(option) ||
+                options[:data].delete(option)
+            end
         end
         options
-      end
-
-      define_method("retrieve_#{option}_from") do |options|
-        case option
-        when "method"
-          options[option] || options[:data][option]
-        else
-          options.delete(option) || options[:data].delete(option)
-        end
       end
 
       define_method("options_has_#{option}?") do |options|
