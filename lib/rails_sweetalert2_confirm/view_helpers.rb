@@ -29,16 +29,25 @@ module RailsSweetAlert2Confirm
       merge_remote_into_swal(options)
     end
 
-    %w(confirm remote).each do |option|
+    %w(confirm remote method).each do |option|
       define_method("merge_#{option}_into_swal") do |options|
         if send("options_has_#{option}?", options)
           options[:data] ||= {}
           options[:data][:swal] ||= {}
           option = option.to_sym
           options[:data][:swal][SWAL_OPTIONS_MAPPINGS[option]] =
-            options.delete(option) || options[:data].delete(option)
+            send("retrieve_#{option}_from", options)
         end
         options
+      end
+
+      define_method("retrieve_#{option}_from") do |options|
+        case option
+        when "method"
+          options[option] || options[:data][option]
+        else
+          options.delete(option) || options[:data].delete(option)
+        end
       end
 
       define_method("options_has_#{option}?") do |options|
