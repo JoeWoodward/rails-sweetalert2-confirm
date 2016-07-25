@@ -31,8 +31,9 @@ module RailsSweetAlert2Confirm
       merge_method_into_swal(options)
     end
 
-    %w(confirm remote method).each do |option|
+    %w(remote method confirm).each do |option|
       define_method("merge_#{option}_into_swal") do |options|
+        return if %w(remote method).include?(option) && !options_has_confirm?
         if send("options_has_#{option}?", options)
           options[:data] ||= {}
           options[:data][:swal] ||= {}
